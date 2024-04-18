@@ -1,0 +1,272 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "remaining",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"allowance(address,address)": {
+					"params": {
+						"_owner": "The address of the account owning tokens",
+						"_spender": "The address of the account able to transfer the tokens"
+					},
+					"returns": {
+						"remaining": "Amount of remaining tokens allowed to spent"
+					}
+				},
+				"approve(address,uint256)": {
+					"params": {
+						"_spender": "The address of the account able to transfer the tokens",
+						"_value": "The amount of wei to be approved for transfer"
+					},
+					"returns": {
+						"success": "Whether the approval was successful or not"
+					}
+				},
+				"balanceOf(address)": {
+					"params": {
+						"_owner": "The address from which the balance will be retrieved"
+					},
+					"returns": {
+						"balance": "the balance"
+					}
+				},
+				"transfer(address,uint256)": {
+					"params": {
+						"_to": "The address of the recipient",
+						"_value": "The amount of token to be transferred"
+					},
+					"returns": {
+						"success": "Whether the transfer was successful or not"
+					}
+				},
+				"transferFrom(address,address,uint256)": {
+					"params": {
+						"_from": "The address of the sender",
+						"_to": "The address of the recipient",
+						"_value": "The amount of token to be transferred"
+					},
+					"returns": {
+						"success": "Whether the transfer was successful or not"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"approve(address,uint256)": {
+					"notice": "`msg.sender` approves `_addr` to spend `_value` tokens"
+				},
+				"transfer(address,uint256)": {
+					"notice": "send `_value` token to `_to` from `msg.sender`"
+				},
+				"transferFrom(address,address,uint256)": {
+					"notice": "send `_value` token to `_to` from `_from` on the condition it is approved by `_from`"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/tokenWithBlacklist.sol": "Token"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/tokenWithBlacklist.sol": {
+			"keccak256": "0xe3dd6d1f569d186fd389dd8d048c0fa6c886c4b19b8c1d4d16b1415657e454a8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f557dd11bd724db1b3412ea1286578525f8308e8813a3209db09bf1f52851c43",
+				"dweb:/ipfs/QmTryNs1pYxp3wkNhG89MRgtPrNSzi1dQgbrsYitR5APzG"
+			]
+		}
+	},
+	"version": 1
+}
